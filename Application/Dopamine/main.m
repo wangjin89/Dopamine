@@ -19,7 +19,8 @@ int main(int argc, char * argv[]) {
                 [[DOEnvironmentManager sharedManager] deleteBootstrap];
             }
             else if (!strcmp(argv[2], "hide-jailbreak")) {
-                [[DOEnvironmentManager sharedManager] setJailbreakHidden:YES];
+                bool hide = strcmp(argv[3], "YES")==0;
+                [[DOEnvironmentManager sharedManager] setJailbreakHidden:hide];
             }
             return 0;
         }
